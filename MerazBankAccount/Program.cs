@@ -11,6 +11,7 @@ namespace MerazBankAccount
     {
         static void Main(string[] args)
         {
+            //Client Info
             string clientName = "Shilling Rich";
             int checkingAccNum = 123456789;
             int reserveAccNum = 12345678;
@@ -25,21 +26,28 @@ namespace MerazBankAccount
 
             //Other Required Tasks
 
-            // Use StreamWriter to create account summary files that track transactions for each account type(each type has its own text file).Files should be located in the Debug Folder and should include:
-            StreamWriter report = new StreamWriter("..\\..\\numbers.txt");
+            // Use StreamWriter to create account summary files that track transactions for each account type
+            //(each type has its own text file)
+            //Files should be located in the Debug Folder and should include:
+            StreamWriter checkHistory = new StreamWriter("..\\..\\checkHistory.txt");
 
-            using (report)
+            using (checkHistory)
             {
                 // Name of Client
-                report.WriteLine("Transaction History for " + clientName + "\n");
+                checkHistory.WriteLine("Transaction History for " + clientName + "\n");
                 // Client Account Number
-                report.WriteLine();
+                checkHistory.WriteLine("Account number: " + checkingAccNum);
                 // Account Type(Checking, Reserve, or Savings)
+                checkHistory.WriteLine("Account type: Checking\n\n");
                 // Each transaction should be on its own line
-                // Each transaction should show date and time of transaction(must use DateTime Class)
-                // Each transaction should show a “+” for deposit and a “-” for withdrawal
-                // Each transaction should show the transaction amount
-                // Each transaction should show the new current balance after the transaction
+                foreach (/*transaction in Checking*/)
+                {
+                    checkHistory.WriteLine("DateTime +//- $amount NewBalance\n");
+                    // Each transaction should show date and time of transaction(must use DateTime Class)
+                    // Each transaction should show a “+” for deposit and a “-” for withdrawal
+                    // Each transaction should show the transaction amount
+                    // Each transaction should show the new current balance after the transaction
+                }
             }
         }
     }

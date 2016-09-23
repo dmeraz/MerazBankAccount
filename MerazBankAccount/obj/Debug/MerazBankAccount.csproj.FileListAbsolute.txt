@@ -1,1 +1,6 @@
 c:\users\wecancodeit\documents\visual studio 2015\Projects\MerazBankAccount\MerazBankAccount\bin\Debug\MerazBankAccount.exe.config
+c:\users\wecancodeit\documents\visual studio 2015\Projects\MerazBankAccount\MerazBankAccount\bin\Debug\MerazBankAccount.exe
+c:\users\wecancodeit\documents\visual studio 2015\Projects\MerazBankAccount\MerazBankAccount\bin\Debug\MerazBankAccount.pdb
+c:\users\wecancodeit\documents\visual studio 2015\Projects\MerazBankAccount\MerazBankAccount\obj\Debug\MerazBankAccount.csprojResolveAssemblyReference.cache
+c:\users\wecancodeit\documents\visual studio 2015\Projects\MerazBankAccount\MerazBankAccount\obj\Debug\MerazBankAccount.exe
+c:\users\wecancodeit\documents\visual studio 2015\Projects\MerazBankAccount\MerazBankAccount\obj\Debug\MerazBankAccount.pdb
