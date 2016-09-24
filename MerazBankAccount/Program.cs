@@ -11,15 +11,20 @@ namespace MerazBankAccount
     {
         static void Main(string[] args)
         {
-            //Client Info
+            //Move to account class
             string clientName = "Shilling Rich";
+
+            //Move to account class
             int checkingAccNum = 123456789;
-            int reserveAccNum = 12345678;
+            int reserveAccNum = 123456;
             int savingsAccNum = 0123456789;
+
+            Console.WriteLine("Welcome to Future Investments Bank.");
 
             //Objects
 
             // Minimum 1 object instantiated from the Checking Account Class
+            // Insert Checking constructor with parameters for minimum balance, interest, 
             // Minimum 1 object instantiated from the Reserve Account Class
             // Minimum 1 object instantiated from the Savings Account Class
 
@@ -40,14 +45,14 @@ namespace MerazBankAccount
                 // Account Type(Checking, Reserve, or Savings)
                 checkHistory.WriteLine("Account type: Checking\n\n");
                 // Each transaction should be on its own line
-                foreach (/*transaction in Checking*/)
-                {
-                    checkHistory.WriteLine("DateTime +//- $amount NewBalance\n");
-                    // Each transaction should show date and time of transaction(must use DateTime Class)
-                    // Each transaction should show a “+” for deposit and a “-” for withdrawal
-                    // Each transaction should show the transaction amount
-                    // Each transaction should show the new current balance after the transaction
-                }
+                //foreach (/*transaction in Checking*/)
+                //{
+                //    checkHistory.WriteLine("DateTime +//- $amount NewBalance\n");
+                //    // Each transaction should show date and time of transaction(must use DateTime Class)
+                //    // Each transaction should show a “+” for deposit and a “-” for withdrawal
+                //    // Each transaction should show the transaction amount
+                //    // Each transaction should show the new current balance after the transaction
+                //}
             }
         }
     }
