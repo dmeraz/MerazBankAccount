@@ -1,4 +1,6 @@
 Transaction History for Shilling Rich
 
 Account number: 123456789
-Account Type: Checking
+Account type: Checking
+
+

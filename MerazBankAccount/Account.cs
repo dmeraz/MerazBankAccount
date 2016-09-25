@@ -15,10 +15,10 @@ namespace MerazBankAccount
         //add address and telephone later
 
         //Account Info
-        string acctType;
-        int acctNum;
-        decimal balance;
-        decimal intRate;
+        private string acctType;
+        private int acctNum;
+        private decimal balance;
+        private decimal intRate;
 
         //properties
         public string ClientInfo
@@ -55,10 +55,31 @@ namespace MerazBankAccount
             this.intRate = intRate;
         }
 
-        //method
+        //methods
+        //Add withdrawl method
+        public void Withdraw()
+        {
+            Console.WriteLine("Please enter an amount to withdraw from your account.");
+            decimal amount = decimal.Parse(Console.ReadLine());
 
-        //Menu
-        public void Menu()
+            decimal newbalance = balance - amount;//might not need to create new variable
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Enjoy your money. You now have {1} in your account.", newbalance);
+        }
+
+        //Add deposit method
+        public void Deposit()
+        {
+            Console.WriteLine("Please enter an amount to deposit into your account.");
+            decimal amount = decimal.Parse(Console.ReadLine());
+
+            decimal newbalance = balance + amount;//might not need to create new variable
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("We'll keep this safe. You now have {1} in your account.", newbalance);
+        }
+
+    //Menu
+    public void Menu()
         {
             //ScoreBoard();
             Console.WriteLine("Please select a menu item.\n");

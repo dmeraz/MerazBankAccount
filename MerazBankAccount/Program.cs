@@ -24,9 +24,11 @@ namespace MerazBankAccount
             //Objects
 
             // Minimum 1 object instantiated from the Checking Account Class
-            // Insert Checking constructor with parameters for minimum balance, interest, 
-            // Minimum 1 object instantiated from the Reserve Account Class
+            // Insert Checking constructor with parameters
+            // Minimum 1 object instantiated from the Reserve Account 
+            // Insert Reserve constructor with parameters
             // Minimum 1 object instantiated from the Savings Account Class
+            // Insert Savings constructor with parameters
 
 
             //Other Required Tasks
