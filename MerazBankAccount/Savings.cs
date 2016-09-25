@@ -38,6 +38,9 @@ namespace MerazBankAccount
             }
         }
 
+        //Methods
+
+
         //Minimum 1 constructor
         public Savings(string acctType, int acctNum, double balance, double intRate) : base(acctType, acctNum, balance, intRate)
         {

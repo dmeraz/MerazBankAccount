@@ -25,16 +25,48 @@ namespace MerazBankAccount
 
             // Minimum 1 object instantiated from the Checking Account Class
             // Insert Checking constructor with parameters
-            Checking checking = new Checking("checking", 0123456789, 300.00, .05, "Everyday Rich", true);
+            Checking richChecking = new Checking("checking", 0123456789, 300.00, .01, "Everyday Rich", true);
 
             // Minimum 1 object instantiated from the Reserve Account 
             // Insert Reserve constructor with parameters
-            Reserve reserve = new Reserve("reserve", 0123456789, 300.00, .05);
+            Reserve richReserve = new Reserve("reserve", 0123456789, 50, .00);
 
             // Minimum 1 object instantiated from the Savings Account Class
             // Insert Savings constructor with parameters
-            Savings savings = new Savings("savings", 0123456789, 300.00, .05);
+            Savings richSavings = new Savings("savings", 0123456789, 1000.00, .05);
 
+            //Create client
+            Account shillingRich = new Account("Shilling Rich");
+
+
+            //Methods
+            do
+            {
+                shillingRich.Menu();
+                string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1": //View Client Information
+                        shillingRich.ViewClient();
+                        break;
+                    case "2": //View Account Balance
+                        shillingRich.ViewBalance();
+                        break;
+                    case "3": //Deposit Funds
+                        shillingRich.Deposit();
+                        break;
+                    case "4": //Withdraw Funds
+                        shillingRich.Withdraw();
+                        break;
+                    case "5": //Exit
+                        shillingRich.Exit();
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid input");
+                        break;
+                }
+            }
+            while (true);
 
             //Other Required Tasks
 

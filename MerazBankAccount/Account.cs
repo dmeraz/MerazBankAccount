@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MerazBankAccount
 {
-     /*abstract*/ class Account
+    /*abstract*/
+    class Account
     {
         //fields
 
@@ -47,6 +48,11 @@ namespace MerazBankAccount
         }
 
         //constructor
+        public Account(string clientName)
+        {
+            this.clientName = clientName;
+        }
+
         public Account(string acctType, int acctNum, double balance, double intRate)
         {
             this.acctType = acctType;
@@ -56,6 +62,10 @@ namespace MerazBankAccount
         }
 
         //methods
+        //Add view client info method
+
+        //Add view account balances method
+
         //Add withdrawl method
         public void Withdraw()
         {
@@ -78,8 +88,15 @@ namespace MerazBankAccount
             Console.WriteLine("We'll keep this safe. You now have {1} in your account.", newbalance);
         }
 
-    //Menu
-    public void Menu()
+        //Add exit method
+        public void Exit()
+        {
+            Console.WriteLine("Thank you for choosing Future Investments Bank.\nWe'll keep your money safe.");
+            System.Threading.Thread.Sleep(1000);
+            Environment.Exit(0);
+        }
+        //Menu
+        public void Menu()
         {
             //ScoreBoard();
             Console.WriteLine("Please select a menu item.\n");
