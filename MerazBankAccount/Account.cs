@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MerazBankAccount
 {
-    class Account
+     /*abstract*/ class Account
     {
         //fields
 
@@ -17,8 +17,8 @@ namespace MerazBankAccount
         //Account Info
         private string acctType;
         private int acctNum;
-        private decimal balance;
-        private decimal intRate;
+        private double balance;
+        private double intRate;
 
         //properties
         public string ClientInfo
@@ -32,7 +32,7 @@ namespace MerazBankAccount
                 this.clientName = "Shilling Rich";
             }
         }
-        public decimal AcctBalance
+        public double AcctBalance
         {
             get
             {
@@ -47,7 +47,7 @@ namespace MerazBankAccount
         }
 
         //constructor
-        public Account(string acctType, int acctNum, decimal balance, decimal intRate)
+        public Account(string acctType, int acctNum, double balance, double intRate)
         {
             this.acctType = acctType;
             this.acctNum = acctNum;
@@ -60,9 +60,9 @@ namespace MerazBankAccount
         public void Withdraw()
         {
             Console.WriteLine("Please enter an amount to withdraw from your account.");
-            decimal amount = decimal.Parse(Console.ReadLine());
+            double amount = double.Parse(Console.ReadLine());
 
-            decimal newbalance = balance - amount;//might not need to create new variable
+            double newbalance = balance - amount;//might not need to create new variable
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Enjoy your money. You now have {1} in your account.", newbalance);
         }
@@ -71,9 +71,9 @@ namespace MerazBankAccount
         public void Deposit()
         {
             Console.WriteLine("Please enter an amount to deposit into your account.");
-            decimal amount = decimal.Parse(Console.ReadLine());
+            double amount = double.Parse(Console.ReadLine());
 
-            decimal newbalance = balance + amount;//might not need to create new variable
+            double newbalance = balance + amount;//might not need to create new variable
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("We'll keep this safe. You now have {1} in your account.", newbalance);
         }

@@ -39,11 +39,11 @@ namespace MerazBankAccount
         }
 
         //Minimum 1 constructor
-        public Savings(string acctType, int acctNum, decimal balance, decimal intRate) : base(acctType, acctNum, balance, intRate)
+        public Savings(string acctType, int acctNum, double balance, double intRate) : base(acctType, acctNum, balance, intRate)
         {
         }
 
-        public Savings(string acctType, int acctNum, decimal balance, decimal intRate, string nickname, bool cashback) : base(acctType, acctNum, balance, intRate)
+        public Savings(string acctType, int acctNum, double balance, double intRate, string nickname, bool cashback) : base(acctType, acctNum, balance, intRate)
         {
 
         }

@@ -25,11 +25,15 @@ namespace MerazBankAccount
 
             // Minimum 1 object instantiated from the Checking Account Class
             // Insert Checking constructor with parameters
+            Checking checking = new Checking("checking", 0123456789, 300.00, .05, "Everyday Rich", true);
 
             // Minimum 1 object instantiated from the Reserve Account 
             // Insert Reserve constructor with parameters
+            Reserve reserve = new Reserve("reserve", 0123456789, 300.00, .05);
+
             // Minimum 1 object instantiated from the Savings Account Class
             // Insert Savings constructor with parameters
+            Savings savings = new Savings("savings", 0123456789, 300.00, .05);
 
 
             //Other Required Tasks
