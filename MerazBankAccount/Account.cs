@@ -62,21 +62,35 @@ namespace MerazBankAccount
         }
 
         //methods
+
         //Add view client info method
-
-        //Add view account balances method
-
-        //Add withdrawl method
         public void ViewClient()
         {
-            Console.WriteLine("Client name: {1}", clientName);
+            Console.WriteLine("Client name: " + ClientInfo);
         }
 
+        //Add view account balances method
         public void ViewBalance()
         {
             Console.WriteLine("{1}: {2}", acctType, balance);
         }
 
+        internal void ViewBalance(Reserve richReserve)
+        {
+            Console.WriteLine("{1}: {2}", acctType, balance);
+        }
+
+        internal void ViewBalance(Savings richSavings)
+        {
+            Console.WriteLine("{1}: {2}", acctType, balance);
+        }
+
+        internal void ViewBalance(Checking richChecking)
+        {
+            Console.WriteLine("{1}: {2}", acctType, balance);
+        }
+
+        //Add withdrawl method
         public void Withdraw()
         {
             Console.WriteLine("Please enter an amount to withdraw from your account.");
@@ -105,6 +119,7 @@ namespace MerazBankAccount
             System.Threading.Thread.Sleep(1000);
             Environment.Exit(0);
         }
+
         //Menu
         public void Menu()
         {

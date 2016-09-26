@@ -50,7 +50,12 @@ namespace MerazBankAccount
                         shillingRich.ViewClient();
                         break;
                     case "2": //View Account Balance
-                        shillingRich.ViewBalance();
+                        {
+                            Console.WriteLine("Here are your account balances, {1}.", shillingRich);
+                            shillingRich.ViewBalance(richChecking);
+                            shillingRich.ViewBalance(richReserve);
+                            shillingRich.ViewBalance(richSavings);
+                        }
                         break;
                     case "3": //Deposit Funds
                         shillingRich.Deposit();
