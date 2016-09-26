@@ -47,8 +47,10 @@ namespace MerazBankAccount
             {
                 return this.balance;
             }
-            //Most banks only allow you to view balance or Withdraw/Deposit
-            //Withdraw/Deposit should be methods
+            set
+            {
+                this.balance = value;
+            }
         }
 
         //constructor
@@ -79,30 +81,15 @@ namespace MerazBankAccount
             Console.WriteLine(AcctType+": "+AcctBalance);
         }
 
-        //internal void ViewBalance(Reserve richReserve)
-        //{
-        //    Console.WriteLine(AcctType + ": " + AcctBalance);
-        //}
-
-        //internal void ViewBalance(Savings richSavings)
-        //{
-        //    Console.WriteLine(AcctType + ": " + AcctBalance);
-        //}
-
-        //internal void ViewBalance(Checking richChecking)
-        //{
-        //    Console.WriteLine(AcctType + ": " + AcctBalance);
-        //}
-
         //Add withdrawl method
         public void Withdraw()
         {
             Console.WriteLine("Please enter an amount to withdraw from your account.");
             double amount = double.Parse(Console.ReadLine());
 
-            double newbalance = balance - amount;//might not need to create new variable
+            AcctBalance = AcctBalance - amount;
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("Enjoy your money. You now have {1} in your account.", newbalance);
+            Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
         }
 
         //Add deposit method
@@ -111,9 +98,9 @@ namespace MerazBankAccount
             Console.WriteLine("Please enter an amount to deposit into your account.");
             double amount = double.Parse(Console.ReadLine());
 
-            double newbalance = balance + amount;//might not need to create new variable
+            AcctBalance = AcctBalance + amount;
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("We'll keep this safe. You now have {1} in your account.", newbalance);
+            Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
         }
 
         //Add exit method
