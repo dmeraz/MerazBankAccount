@@ -11,14 +11,6 @@ namespace MerazBankAccount
     {
         static void Main(string[] args)
         {
-            //Move to account class
-            string clientName = "Shilling Rich";
-
-            //Move to account class
-            int checkingAccNum = 123456789;
-            int reserveAccNum = 123456;
-            int savingsAccNum = 0123456789;
-
             Console.WriteLine("Welcome to Future Investments Bank.");
 
             //Objects
@@ -38,12 +30,22 @@ namespace MerazBankAccount
             //Create client
             Account shillingRich = new Account("Shilling Rich");
 
+            //These will write files, but won't track anything, details at end of class
+            StreamWriter checkHistory = new StreamWriter("checkHistory.txt");
+            using (checkHistory)
+            {
+                checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
+                checkHistory.WriteLine("Account number: " + richChecking.AcctNum);
+                checkHistory.WriteLine("Account type: " + richChecking.AcctType);
+                checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richChecking.AcctBalance + "\n");
+            }
 
             //Methods
             do
             {
                 shillingRich.Menu();
                 string choice = Console.ReadLine();
+
                 switch (choice)
                 {
                     case "1": //View Client Information
@@ -51,7 +53,7 @@ namespace MerazBankAccount
                         break;
                     case "2": //View Account Balance
                         {
-                            Console.WriteLine("Here are your account balances, " +shillingRich.ClientInfo+".");
+                            Console.WriteLine("Here are your account balances, " + shillingRich.ClientInfo + ".");
                             richChecking.ViewBalance();
                             richReserve.ViewBalance();
                             richSavings.ViewBalance();
@@ -73,31 +75,56 @@ namespace MerazBankAccount
             }
             while (true);
 
+
             //Other Required Tasks
 
-            // Use StreamWriter to create account summary files that track transactions for each account type
+            //Use StreamWriter to create account summary files that track transactions for each account type
             //(each type has its own text file)
-            //Files should be located in the Debug Folder and should include:
-            StreamWriter checkHistory = new StreamWriter("..\\..\\checkHistory.txt");
 
-            using (checkHistory)
-            {
-                // Name of Client
-                checkHistory.WriteLine("Transaction History for " + clientName + "\n");
-                // Client Account Number
-                checkHistory.WriteLine("Account number: " + checkingAccNum);
-                // Account Type(Checking, Reserve, or Savings)
-                checkHistory.WriteLine("Account type: Checking\n\n");
-                // Each transaction should be on its own line
-                //foreach (/*transaction in Checking*/)
-                //{
-                //    checkHistory.WriteLine("DateTime +//- $amount NewBalance\n");
-                //    // Each transaction should show date and time of transaction(must use DateTime Class)
-                //    // Each transaction should show a “+” for deposit and a “-” for withdrawal
-                //    // Each transaction should show the transaction amount
-                //    // Each transaction should show the new current balance after the transaction
-                //}
-            }
+            //Files should be located in the Debug Folder and should include:
+            //    // Name of Client
+            //    // Client Account Number
+            //    // Account Type(Checking, Reserve, or Savings)
+            //    // Each transaction should be on its own line
+            //    // Each transaction should show date and time of transaction(must use DateTime Class)
+            //    // Each transaction should show a “+” for deposit and a “-” for withdrawal
+            //    // Each transaction should show the transaction amount
+            //    // Each transaction should show the new current balance after the transaction
+
+
+            //StreamWriter resHistory = new StreamWriter("resHistory.txt");
+            //using (resHistory)
+            //{
+            //    checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
+            //    checkHistory.WriteLine("Account number: " + richReserve.AcctNum);
+            //    checkHistory.WriteLine("Account type: " + richReserve.AcctType);
+            //    checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richReserve.AcctBalance + "\n");
+            //}
+
+            //StreamWriter savHistory = new StreamWriter("savHistory.txt");
+            //using (savHistory)
+            //{
+            //    checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
+            //    checkHistory.WriteLine("Account number: " + richSavings.AcctNum);
+            //    checkHistory.WriteLine("Account type: " + richSavings.AcctType);
+            //    checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richSavings.AcctBalance + "\n");
+            //}
+
+
+            //Notes Regarding StreamWriter
+
+            //StreamWriter code was not reachable here.
+            //Attempted move to into switch-case.
+            //This prevented more than one menu task from being selected in a single session. 
+            //Attempted to move StreamWriter into Account class.
+            //This did not allow the program to run.
+            //Prior to StreamWriter becoming unreachable code,
+            //which seemed to have something to do with the do-while class,
+            //checkHistory.txt was produced.
+
+            //Once checkHistory works:
+            //Add deposit and withdraw methods for reserve and savings account
+
         }
     }
 }

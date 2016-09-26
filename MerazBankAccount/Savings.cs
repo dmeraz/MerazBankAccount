@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MerazBankAccount
 {
-    class Savings: Account
+    class Savings : Account
     {
         //Inherits Account base class
         //Minimum 2 fields

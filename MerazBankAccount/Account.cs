@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using System.IO;
 
 namespace MerazBankAccount
 {
@@ -40,7 +41,13 @@ namespace MerazBankAccount
                 return this.acctType;
             }
         }
-
+        public int AcctNum
+        {
+            get
+            {
+                return this.acctNum;
+            }
+        }
         public double AcctBalance
         {
             get
@@ -78,8 +85,10 @@ namespace MerazBankAccount
         //Add view account balances method
         public void ViewBalance()
         {
-            Console.WriteLine(AcctType+": "+AcctBalance);
+            Console.WriteLine(AcctType + ": " + AcctBalance);
         }
+
+        //Attempted to initiate new StreamWriter object here
 
         //Add withdrawl method
         public void Withdraw()
@@ -90,6 +99,8 @@ namespace MerazBankAccount
             AcctBalance = AcctBalance - amount;
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
+
+            //Attempted using statement for StreamWriter here
         }
 
         //Add deposit method
@@ -101,6 +112,8 @@ namespace MerazBankAccount
             AcctBalance = AcctBalance + amount;
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
+
+            //Attempted second using statement for StreamWriter here
         }
 
         //Add exit method
