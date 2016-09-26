@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.IO;
+using System.IO;
 
 namespace MerazBankAccount
 {
@@ -21,6 +21,9 @@ namespace MerazBankAccount
         private int acctNum;
         private double balance;
         private double intRate;
+
+        //StreamWriter
+        StreamWriter checkHistory; // = new StreamWriter("checkHistory.txt");
 
         //properties
         public string ClientInfo
@@ -100,7 +103,16 @@ namespace MerazBankAccount
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
 
-            //Attempted using statement for StreamWriter here
+            //StreamWriter needs to use Close() instead of using
+            //Boolean allows for StreamWriter to write multiple transactions
+            checkHistory = new StreamWriter("checkHistory.txt", true);
+            {
+                checkHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
+                checkHistory.WriteLine("Account number: " + AcctNum);
+                checkHistory.WriteLine("Account type: " + AcctType);
+                checkHistory.WriteLine(DateTime.Now + " - " + amount + " " + AcctBalance + "\n");
+            }
+            checkHistory.Close();
         }
 
         //Add deposit method
@@ -114,6 +126,14 @@ namespace MerazBankAccount
             Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
 
             //Attempted second using statement for StreamWriter here
+            checkHistory = new StreamWriter("checkHistory.txt", true);
+            {
+                checkHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
+                checkHistory.WriteLine("Account number: " + AcctNum);
+                checkHistory.WriteLine("Account type: " + AcctType);
+                checkHistory.WriteLine(DateTime.Now + " + " + amount + " " + AcctBalance + "\n");
+            }
+            checkHistory.Close();
         }
 
         //Add exit method

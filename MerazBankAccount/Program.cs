@@ -31,14 +31,14 @@ namespace MerazBankAccount
             Account shillingRich = new Account("Shilling Rich");
 
             //These will write files, but won't track anything, details at end of class
-            StreamWriter checkHistory = new StreamWriter("checkHistory.txt");
-            using (checkHistory)
-            {
-                checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
-                checkHistory.WriteLine("Account number: " + richChecking.AcctNum);
-                checkHistory.WriteLine("Account type: " + richChecking.AcctType);
-                checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richChecking.AcctBalance + "\n");
-            }
+            //StreamWriter checkHistory = new StreamWriter("checkHistory.txt");
+            //using (checkHistory)
+            //{
+            //    checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
+            //    checkHistory.WriteLine("Account number: " + richChecking.AcctNum);
+            //    checkHistory.WriteLine("Account type: " + richChecking.AcctType);
+            //    checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richChecking.AcctBalance + "\n");
+            //}
 
             //Methods
             do
@@ -91,7 +91,7 @@ namespace MerazBankAccount
             //    // Each transaction should show the transaction amount
             //    // Each transaction should show the new current balance after the transaction
 
-
+ 
             //StreamWriter resHistory = new StreamWriter("resHistory.txt");
             //using (resHistory)
             //{
