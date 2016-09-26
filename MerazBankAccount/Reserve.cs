@@ -38,6 +38,12 @@ namespace MerazBankAccount
             }
         }
 
+        //methods
+        //new internal void ViewBalance()
+        //{
+        //    Console.WriteLine(AcctType + ": " + AcctBalance);
+        //}
+
         //Minimum 1 constructor
         public Reserve(string acctType, int acctNum, double balance, double intRate) : base(acctType, acctNum, balance, intRate)
         {

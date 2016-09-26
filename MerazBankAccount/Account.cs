@@ -33,6 +33,14 @@ namespace MerazBankAccount
                 this.clientName = "Shilling Rich";
             }
         }
+        public string AcctType
+        {
+            get
+            {
+                return this.acctType;
+            }
+        }
+
         public double AcctBalance
         {
             get
@@ -40,11 +48,7 @@ namespace MerazBankAccount
                 return this.balance;
             }
             //Most banks only allow you to view balance or Withdraw/Deposit
-            //Withdraw/Deposit should be methods that alter the property
-            //set
-            //{
-            //    this.balance = value;
-            //}
+            //Withdraw/Deposit should be methods
         }
 
         //constructor
@@ -72,23 +76,23 @@ namespace MerazBankAccount
         //Add view account balances method
         public void ViewBalance()
         {
-            Console.WriteLine("{1}: {2}", acctType, balance);
+            Console.WriteLine(AcctType+": "+AcctBalance);
         }
 
-        internal void ViewBalance(Reserve richReserve)
-        {
-            Console.WriteLine("{1}: {2}", acctType, balance);
-        }
+        //internal void ViewBalance(Reserve richReserve)
+        //{
+        //    Console.WriteLine(AcctType + ": " + AcctBalance);
+        //}
 
-        internal void ViewBalance(Savings richSavings)
-        {
-            Console.WriteLine("{1}: {2}", acctType, balance);
-        }
+        //internal void ViewBalance(Savings richSavings)
+        //{
+        //    Console.WriteLine(AcctType + ": " + AcctBalance);
+        //}
 
-        internal void ViewBalance(Checking richChecking)
-        {
-            Console.WriteLine("{1}: {2}", acctType, balance);
-        }
+        //internal void ViewBalance(Checking richChecking)
+        //{
+        //    Console.WriteLine(AcctType + ": " + AcctBalance);
+        //}
 
         //Add withdrawl method
         public void Withdraw()
