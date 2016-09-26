@@ -67,6 +67,16 @@ namespace MerazBankAccount
         //Add view account balances method
 
         //Add withdrawl method
+        public void ViewClient()
+        {
+            Console.WriteLine("Client name: {1}", clientName);
+        }
+
+        public void ViewBalance()
+        {
+            Console.WriteLine("{1}: {2}", acctType, balance);
+        }
+
         public void Withdraw()
         {
             Console.WriteLine("Please enter an amount to withdraw from your account.");
