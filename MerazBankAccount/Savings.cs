@@ -69,5 +69,25 @@ namespace MerazBankAccount
             }
             savHistory.Close();
         }
+
+        //Override deposit method
+        public override void Deposit()
+        {
+            Console.WriteLine("Please enter an amount to deposit into your account.");
+            double amount = double.Parse(Console.ReadLine());
+
+            AcctBalance = AcctBalance + amount;
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
+
+            savHistory = new StreamWriter("savHistory.txt", true);
+            {
+                savHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
+                savHistory.WriteLine("Account number: " + AcctNum);
+                savHistory.WriteLine("Account type: " + AcctType);
+                savHistory.WriteLine(DateTime.Now + " + " + amount + " " + AcctBalance + "\n");
+            }
+            savHistory.Close();
+        }
     }
 }

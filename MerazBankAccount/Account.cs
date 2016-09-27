@@ -104,10 +104,12 @@ namespace MerazBankAccount
             AcctBalance = AcctBalance - amount;
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
+
+            //Continue override method here
         }
 
         //Add deposit method
-        public void Deposit()
+        public virtual void Deposit()
         {
             Console.WriteLine("Please enter an amount to deposit into your account.");
             double amount = double.Parse(Console.ReadLine());
@@ -116,15 +118,7 @@ namespace MerazBankAccount
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
 
-            //Attempted second using statement for StreamWriter here
-            resHistory = new StreamWriter("checkHistory.txt", true);
-            {
-                resHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
-                resHistory.WriteLine("Account number: " + AcctNum);
-                resHistory.WriteLine("Account type: " + AcctType);
-                resHistory.WriteLine(DateTime.Now + " + " + amount + " " + AcctBalance + "\n");
-            }
-            resHistory.Close();
+            //Continue override method here
         }
 
         //Add exit method
