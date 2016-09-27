@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MerazBankAccount
 {
@@ -46,6 +47,26 @@ namespace MerazBankAccount
         public Checking(string acctType, int acctNum, double balance, double intRate, string nickname, bool cashback) : base(acctType, acctNum, balance, intRate)
         {
 
+        }
+
+        //Override withdrawl method
+        public override void Withdraw()
+        {
+            Console.WriteLine("Please enter an amount to withdraw from your account.");
+            double amount = double.Parse(Console.ReadLine());
+
+            AcctBalance = AcctBalance - amount;
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
+
+            checkHistory = new StreamWriter("checkHistory.txt", true);
+            {
+                checkHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
+                checkHistory.WriteLine("Account number: " + AcctNum);
+                checkHistory.WriteLine("Account type: " + AcctType);
+                checkHistory.WriteLine(DateTime.Now + " - " + amount + " " + AcctBalance + "\n");
+            }
+            checkHistory.Close();
         }
     }
 }

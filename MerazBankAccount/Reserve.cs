@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MerazBankAccount
 {
@@ -49,6 +50,24 @@ namespace MerazBankAccount
 
         }
 
-        //
+        //Override Withdraw Method
+        public override void Withdraw()
+        {
+            Console.WriteLine("Please enter an amount to withdraw from your account.");
+            double amount = double.Parse(Console.ReadLine());
+
+            AcctBalance = AcctBalance - amount;
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
+
+            resHistory = new StreamWriter("resHistory.txt", true);
+            {
+                resHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
+                resHistory.WriteLine("Account number: " + AcctNum);
+                resHistory.WriteLine("Account type: " + AcctType);
+                resHistory.WriteLine(DateTime.Now + " - " + amount + " " + AcctBalance + "\n");
+            }
+            resHistory.Close();
+        }
     }
 }

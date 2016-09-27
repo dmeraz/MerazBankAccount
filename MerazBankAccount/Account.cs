@@ -23,7 +23,9 @@ namespace MerazBankAccount
         private double intRate;
 
         //StreamWriter
-        StreamWriter checkHistory;
+        protected StreamWriter checkHistory;
+        protected StreamWriter resHistory;
+        protected StreamWriter savHistory;
 
         //properties
         public string ClientInfo
@@ -94,7 +96,7 @@ namespace MerazBankAccount
         //Attempted to initiate new StreamWriter object here
 
         //Add withdrawl method
-        public void Withdraw()
+        public virtual void Withdraw()
         {
             Console.WriteLine("Please enter an amount to withdraw from your account.");
             double amount = double.Parse(Console.ReadLine());
@@ -102,17 +104,6 @@ namespace MerazBankAccount
             AcctBalance = AcctBalance - amount;
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
-
-            //StreamWriter needs to use Close() instead of using
-            //Boolean allows for StreamWriter to write multiple transactions
-            checkHistory = new StreamWriter("checkHistory.txt", true);
-            {
-                checkHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
-                checkHistory.WriteLine("Account number: " + AcctNum);
-                checkHistory.WriteLine("Account type: " + AcctType);
-                checkHistory.WriteLine(DateTime.Now + " - " + amount + " " + AcctBalance + "\n");
-            }
-            checkHistory.Close();
         }
 
         //Add deposit method
@@ -126,14 +117,14 @@ namespace MerazBankAccount
             Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
 
             //Attempted second using statement for StreamWriter here
-            checkHistory = new StreamWriter("checkHistory.txt", true);
+            resHistory = new StreamWriter("checkHistory.txt", true);
             {
-                checkHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
-                checkHistory.WriteLine("Account number: " + AcctNum);
-                checkHistory.WriteLine("Account type: " + AcctType);
-                checkHistory.WriteLine(DateTime.Now + " + " + amount + " " + AcctBalance + "\n");
+                resHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
+                resHistory.WriteLine("Account number: " + AcctNum);
+                resHistory.WriteLine("Account type: " + AcctType);
+                resHistory.WriteLine(DateTime.Now + " + " + amount + " " + AcctBalance + "\n");
             }
-            checkHistory.Close();
+            resHistory.Close();
         }
 
         //Add exit method
