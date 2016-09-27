@@ -7,12 +7,12 @@ using System.IO;
 
 namespace MerazBankAccount
 {
-    class Reserve : Account
+    class Reserve : Account //Inherits Account base class
     {
-        //Inherits Account base class
         //Minimum 2 fields
         string nickname;
         bool cashback;
+
 
         //Minimum 2 properties
         public string Rename
@@ -50,7 +50,10 @@ namespace MerazBankAccount
 
         }
 
-        //Override Withdraw Method
+
+        //Methods
+
+        //Override withdraw method
         public override void Withdraw()
         {
             Console.WriteLine("Please enter an amount to withdraw from your account.");

@@ -7,7 +7,6 @@ using System.IO;
 
 namespace MerazBankAccount
 {
-    /*abstract*/
     class Account
     {
         //fields
@@ -26,6 +25,7 @@ namespace MerazBankAccount
         protected StreamWriter checkHistory;
         protected StreamWriter resHistory;
         protected StreamWriter savHistory;
+
 
         //properties
         public string ClientInfo
@@ -65,7 +65,8 @@ namespace MerazBankAccount
             }
         }
 
-        //constructor
+
+        //constructors
         public Account(string clientName)
         {
             this.clientName = clientName;
@@ -78,6 +79,7 @@ namespace MerazBankAccount
             this.balance = balance;
             this.intRate = intRate;
         }
+
 
         //methods
 
@@ -92,8 +94,6 @@ namespace MerazBankAccount
         {
             Console.WriteLine(AcctType + ": $" + AcctBalance);
         }
-
-        //Attempted to initiate new StreamWriter object here
 
         //Add withdrawl method
         public virtual void Withdraw()

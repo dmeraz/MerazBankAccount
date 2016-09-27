@@ -30,15 +30,6 @@ namespace MerazBankAccount
             //Create client
             Account shillingRich = new Account("Shilling Rich");
 
-            //These will write files, but won't track anything, details at end of class
-            //StreamWriter checkHistory = new StreamWriter("checkHistory.txt");
-            //using (checkHistory)
-            //{
-            //    checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
-            //    checkHistory.WriteLine("Account number: " + richChecking.AcctNum);
-            //    checkHistory.WriteLine("Account type: " + richChecking.AcctType);
-            //    checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richChecking.AcctBalance + "\n");
-            //}
 
             //Methods
             do
@@ -128,21 +119,6 @@ namespace MerazBankAccount
             //    // Each transaction should show a “+” for deposit and a “-” for withdrawal
             //    // Each transaction should show the transaction amount
             //    // Each transaction should show the new current balance after the transaction
-
-
-            //Notes Regarding StreamWriter
-
-            //StreamWriter code was not reachable here.
-            //Attempted move to into switch-case.
-            //This prevented more than one menu task from being selected in a single session. 
-            //Attempted to move StreamWriter into Account class.
-            //This did not allow the program to run.
-            //Prior to StreamWriter becoming unreachable code,
-            //which seemed to have something to do with the do-while class,
-            //checkHistory.txt was produced.
-
-            //Once checkHistory works:
-            //Add deposit and withdraw methods for reserve and savings account
 
         }
     }

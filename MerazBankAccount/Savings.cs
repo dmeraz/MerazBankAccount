@@ -7,12 +7,12 @@ using System.IO;
 
 namespace MerazBankAccount
 {
-    class Savings : Account
+    class Savings : Account //Inherits Account base class
     {
-        //Inherits Account base class
         //Minimum 2 fields
         string nickname;
         bool cashback;
+
 
         //Minimum 2 properties
         public string Rename
@@ -49,6 +49,9 @@ namespace MerazBankAccount
         {
 
         }
+
+
+        //Methods
 
         //Override withdrawl method
         public override void Withdraw()
