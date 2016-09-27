@@ -58,14 +58,14 @@ namespace MerazBankAccount
 
             AcctBalance = AcctBalance - amount;
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
+            Console.WriteLine("Enjoy your money. You now have $" + AcctBalance + " in your account.");
 
             savHistory = new StreamWriter("savHistory.txt", true);
             {
                 savHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
                 savHistory.WriteLine("Account number: " + AcctNum);
                 savHistory.WriteLine("Account type: " + AcctType);
-                savHistory.WriteLine(DateTime.Now + " - " + amount + " " + AcctBalance + "\n");
+                savHistory.WriteLine(DateTime.Now + " - $" + amount + " $" + AcctBalance + "\n");
             }
             savHistory.Close();
         }
@@ -78,14 +78,14 @@ namespace MerazBankAccount
 
             AcctBalance = AcctBalance + amount;
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
+            Console.WriteLine("We'll keep this safe. You now have $" + AcctBalance + " in your account.");
 
             savHistory = new StreamWriter("savHistory.txt", true);
             {
                 savHistory.WriteLine("Transaction History for " + ClientInfo + "\n");
                 savHistory.WriteLine("Account number: " + AcctNum);
                 savHistory.WriteLine("Account type: " + AcctType);
-                savHistory.WriteLine(DateTime.Now + " + " + amount + " " + AcctBalance + "\n");
+                savHistory.WriteLine(DateTime.Now + " + $" + amount + " $" + AcctBalance + "\n");
             }
             savHistory.Close();
         }

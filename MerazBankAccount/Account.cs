@@ -90,7 +90,7 @@ namespace MerazBankAccount
         //Add view account balances method
         public void ViewBalance()
         {
-            Console.WriteLine(AcctType + ": " + AcctBalance);
+            Console.WriteLine(AcctType + ": $" + AcctBalance);
         }
 
         //Attempted to initiate new StreamWriter object here
@@ -103,7 +103,7 @@ namespace MerazBankAccount
 
             AcctBalance = AcctBalance - amount;
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("Enjoy your money. You now have " + AcctBalance + " in your account.");
+            Console.WriteLine("Enjoy your money. You now have $" + AcctBalance + " in your account.");
 
             //Continue override method here
         }
@@ -116,7 +116,7 @@ namespace MerazBankAccount
 
             AcctBalance = AcctBalance + amount;
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("We'll keep this safe. You now have " + AcctBalance + " in your account.");
+            Console.WriteLine("We'll keep this safe. You now have $" + AcctBalance + " in your account.");
 
             //Continue override method here
         }

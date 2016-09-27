@@ -1,30 +1,30 @@
 Transaction History for Shilling Rich
 
 Account number: 123456789
-Account type: reserve
-9/27/2016 12:25:41 AM - 12 38
+Account type: savings
+9/27/2016 12:26:03 AM - 200 800
 
 Transaction History for Shilling Rich
 
 Account number: 123456789
-Account type: reserve
-9/27/2016 12:34:10 AM + 12 62
+Account type: savings
+9/27/2016 12:34:32 AM + 102 1102
 
 Transaction History for Shilling Rich
 
 Account number: 123456789
-Account type: reserve
-9/27/2016 12:34:59 AM - 5 57
+Account type: savings
+9/27/2016 12:35:13 AM - 105 997
 
 Transaction History for Shilling Rich
 
 Account number: 123456789
-Account type: reserve
-9/27/2016 12:42:02 AM + $12 $62
+Account type: savings
+9/27/2016 12:42:15 AM + $101 $1101
 
 Transaction History for Shilling Rich
 
 Account number: 123456789
-Account type: reserve
-9/27/2016 12:43:07 AM - $22 $40
+Account type: savings
+9/27/2016 12:43:17 AM - $201 $900
 
