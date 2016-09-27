@@ -23,7 +23,7 @@ namespace MerazBankAccount
         private double intRate;
 
         //StreamWriter
-        StreamWriter checkHistory; // = new StreamWriter("checkHistory.txt");
+        StreamWriter checkHistory;
 
         //properties
         public string ClientInfo
@@ -147,7 +147,7 @@ namespace MerazBankAccount
         //Menu
         public void Menu()
         {
-            //ScoreBoard();
+            //Client services
             Console.WriteLine("Please select a menu item.\n");
             Console.WriteLine("1. View Client Information");
             Console.WriteLine("2. View Account Balance");
@@ -158,5 +158,15 @@ namespace MerazBankAccount
             Console.WriteLine("4. Withdraw Funds");
             Console.WriteLine("5. Exit");
         }
+
+        //Account Menu
+        public void AccountMenu()
+        {
+            Console.WriteLine("Please select an account.\n");
+            Console.WriteLine("   a. Checking Account Balance");
+            Console.WriteLine("   b. Reserve Account Balance");
+            Console.WriteLine("   c. Savings Account Balance");
+        }
+
     }
 }

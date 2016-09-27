@@ -60,10 +60,48 @@ namespace MerazBankAccount
                         }
                         break;
                     case "3": //Deposit Funds
-                        richChecking.Deposit();
+                        {
+                            shillingRich.AccountMenu();
+                            string choice2 = Console.ReadLine();
+
+                            switch (choice2)
+                            {
+                                case "a":
+                                    richChecking.Deposit();
+                                    break;
+                                case "b":
+                                    richReserve.Deposit();
+                                    break;
+                                case "c":
+                                    richSavings.Deposit();
+                                    break;
+                                default:
+                                    Console.WriteLine("Please enter a valid input");
+                                    break;
+                            }
+                        }
                         break;
                     case "4": //Withdraw Funds
-                        richChecking.Withdraw();
+                        {
+                            shillingRich.AccountMenu();
+                            string choice3 = Console.ReadLine();
+
+                            switch (choice3)
+                            {
+                                case "a":
+                                    richChecking.Withdraw();
+                                    break;
+                                case "b":
+                                    richReserve.Withdraw();
+                                    break;
+                                case "c":
+                                    richSavings.Withdraw();
+                                    break;
+                                default:
+                                    Console.WriteLine("Please enter a valid input");
+                                    break;
+                            }
+                        }
                         break;
                     case "5": //Exit
                         shillingRich.Exit();
@@ -90,25 +128,6 @@ namespace MerazBankAccount
             //    // Each transaction should show a “+” for deposit and a “-” for withdrawal
             //    // Each transaction should show the transaction amount
             //    // Each transaction should show the new current balance after the transaction
-
- 
-            //StreamWriter resHistory = new StreamWriter("resHistory.txt");
-            //using (resHistory)
-            //{
-            //    checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
-            //    checkHistory.WriteLine("Account number: " + richReserve.AcctNum);
-            //    checkHistory.WriteLine("Account type: " + richReserve.AcctType);
-            //    checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richReserve.AcctBalance + "\n");
-            //}
-
-            //StreamWriter savHistory = new StreamWriter("savHistory.txt");
-            //using (savHistory)
-            //{
-            //    checkHistory.WriteLine("Transaction History for " + shillingRich.ClientInfo + "\n");
-            //    checkHistory.WriteLine("Account number: " + richSavings.AcctNum);
-            //    checkHistory.WriteLine("Account type: " + richSavings.AcctType);
-            //    checkHistory.WriteLine(DateTime.Now + " +/- " + " amount " + richSavings.AcctBalance + "\n");
-            //}
 
 
             //Notes Regarding StreamWriter
